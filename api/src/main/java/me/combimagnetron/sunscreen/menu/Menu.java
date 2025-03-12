@@ -90,7 +90,7 @@ public interface Menu {
     abstract class FloatImpl extends Base implements Tickable {
         private final SunscreenUser<?> viewer;
         private final HashMap<Identifier, TextDisplay> divEntityIdHashMap = new HashMap<>();
-        private final TextDisplay cursorDisplay = TextDisplay.textDisplay(Vector3d.vec3(0));
+        protected final TextDisplay cursorDisplay = TextDisplay.textDisplay(Vector3d.vec3(0));
         private final TextDisplay background = TextDisplay.textDisplay(Vector3d.vec3(0));
         private Color backgroundColor = Color.of(0, 0, 0, 0);
         private Vec2d lastInput = Vec2d.of(0, 0);

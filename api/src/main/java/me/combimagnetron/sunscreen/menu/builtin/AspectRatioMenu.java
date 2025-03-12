@@ -143,8 +143,9 @@ public class AspectRatioMenu implements Menu {
                         Vec2d screenSize = Vec2d.of((end.x() - begin.x())/PixelFactor, (end.y() - begin.y())/PixelFactor);
                         viewer.screenSize(ScreenSize.of(screenSize, Pair.of(Vec2d.of(begin.x(), begin.y()), Vec2d.of(end.x(), end.y()))));
                         leave();
-                        new SetupMenu(viewer);
+                        //new SetupMenu(viewer);
                         //new EditorMenu(viewer);
+                        new BrowserScreen(viewer);
                     }
 
                 }

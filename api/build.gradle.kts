@@ -26,6 +26,7 @@ dependencies {
     implementation("net.kyori:adventure-text-serializer-gson:4.14.0")
     implementation("io.github.jglrxavpok.hephaistos:common:2.6.0")
     implementation("com.typesafe:config:1.4.2")
+    implementation(files("../spigot/libs/jcef.jar"))
     compileOnly("me.combimagnetron:Passport:1.0-SNAPSHOT")
     compileOnly("com.google.guava:guava:31.1-jre")
     compileOnly("org.apache.commons:commons-lang3:3.17.0")

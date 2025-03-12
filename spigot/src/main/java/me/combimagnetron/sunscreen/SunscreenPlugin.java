@@ -53,6 +53,8 @@ public class SunscreenPlugin extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(this, this);
         this.userManager = new UserManager(this);
         this.getDataFolder().mkdirs();
+
+        this.getCommand("openscreen").setExecutor(new me.combimagnetron.sunscreen.user.OpenScreenCommand(userManager));
     }
 
     @Override

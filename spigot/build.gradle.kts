@@ -79,6 +79,7 @@ tasks.withType(xyz.jpenilla.runtask.task.AbstractRun::class) {
 dependencies {
     implementation(project(":api"))
     implementation("me.combimagnetron:Passport:1.0-SNAPSHOT")
+    implementation(files("../spigot/libs/jcef.jar"))
     compileOnly("net.kyori:adventure-api:4.14.0")
     compileOnly("net.kyori:adventure-text-serializer-gson:4.14.0")
     compileOnly("io.papermc.paper:paper-api:1.21.3-R0.1-SNAPSHOT")
@@ -92,17 +93,22 @@ bukkit {
     version = project.version.toString()
     authors = listOf("Combimagnetron")
     description = "Create UIs like never seen before, all from within the game!"
-    libraries = listOf("com.google.guava:guava:31.1-jre",
+    libraries = listOf(
+        "com.google.guava:guava:31.1-jre",
         "org.apache.commons:commons-lang3:3.17.0",
         "org.jetbrains.kotlin:kotlin-reflect:1.7.22",
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.22",
         "commons-io:commons-io:2.18.0",
         "com.github.ben-manes.caffeine:caffeine:3.2.0",
         "org.apache.commons:commons-lang3:3.17.0"
-        )
+    )
     website = "https://combimagnetron.me"
-
-    dependencies {
-        depend = listOf("packetevents")
+    depend = listOf("packetevents")
+    commands {
+        create("openscreen") {
+            description = "Opens the Sunscreen UI for the player"
+            usage = "/openscreen"
+            aliases = listOf("os")
+        }
     }
 }
